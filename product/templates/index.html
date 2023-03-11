@@ -1,0 +1,303 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compitable" content="ie=edge">
+    <title>CoCoder</title>
+
+    <link href="client\css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  
+    <script src="{% static 'index.js' %}"></script> 
+    
+  <!-- <script src="index.js"></script>
+-->
+
+   
+   
+<style>
+  * {
+    box-sizing: border-box;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    
+  }
+ 
+  body {
+    color: black;
+    
+    font-family: 'oswald' sans-serif;
+    font-size: 17px;
+    min-height: 100vh;
+    background-color: rgb(245, 241, 241);
+    
+  }
+  body .main-hero {
+    display: none;
+   }
+  body .main-hero.hero{
+    display: block;
+   }
+  
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(24, 23, 23);
+    color: black;
+    border: 0.5px solid rgb(0, 0, 0);
+  }
+  
+  .nav .container-fluid{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 0px;
+   transition: all 0.3s ease-in-out; 
+   background-color: rgb(245, 241, 241);
+   
+   }
+   h1.logo {
+    padding-left: 10px;
+   }
+   h1.logo a{
+    
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-color: blueviolet;
+    color: rgb(255, 255, 255);
+   }
+
+   
+   .nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+   }
+   .nav a {
+    color: rgb(24, 23, 23);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 200px;
+    position: relative;
+   }
+   .nav ul li {
+    margin-top: 17px;
+    margin-right: 30px;
+   }
+   .nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    bottom: -6px;
+    background-color: blueviolet;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+
+   }
+   .nav ul li a:hover::after{
+    width: 100%;
+    content: "";
+    height: 3px;
+    bottom: -6px;
+    background-color: blueviolet;
+    position: absolute;
+    left: 0;
+   }
+
+ 
+   .entry.intro {
+    text-align: center;
+   }
+   div.col.text-center{
+    padding-top: 15%;
+    padding-bottom: 10%;
+    
+   }
+  div.col.text-center h1 {
+    padding-bottom: 50px;
+    font-size: 60px;
+    transition: 1s;
+    color: rgb(24, 23, 23)
+   }
+
+  .container.intro  nav.nav {
+    display: none;
+   }
+   .col.text-center.down-anchor {
+    padding-top: 0px;
+    color:darkorange;
+   }
+   .col.text-center.down-anchor button {
+    background-color: chartreuse;
+    padding: 10px 40px;
+    color: black;
+    border-radius: 6px;
+    transition: 0.2s;
+    box-shadow: 2px 2px 10px black;
+   }
+   .col.text-center.down-anchor button:hover {
+    background-color: darkorange;
+    color: white;
+   }
+   .main-block {
+    position: relative;
+    margin-top: 15%;
+   }
+  .main-block .userIntrest {
+      position: absolute;
+      margin-top: 50px;
+      text-align: center;
+    }
+    .main-block .userIntrest div{
+      width: 300px;
+      height: 300px;
+      background-color: blueviolet;
+      display: inline-block;
+      margin-top: 5px;
+     }
+     .main-block .userIntrest div h1 {
+      text-align: center;
+      position: relative;
+      margin-top: 43%;
+     }
+     .main-block .userIntrest button {
+      cursor: pointer;
+     }
+     .main-block .userIntrest button:hover {
+      transition: 0.5s;
+      transform: scale(1.04);
+     } 
+  
+
+
+   @media only screen and (min-width: 319px) and (max-width:1020px){
+    
+    h1.logo a {
+      font-size: 20px;
+    }
+    .nav .container-fluid {
+      display: block;
+    }
+    .nav ul {
+      display: block;
+      margin-left: 158px;
+      background-color: white;
+      padding-left: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 0px 50px 700px 50px;
+      margin-right: -300px;
+      transition: 0.5s;
+      
+    }.nav ul li {
+      margin-left: 1px;
+      padding:  4px 40px;
+    }
+    .nav ul li a {
+      color: black;
+      font-size: 12px;
+      padding: 0px;
+    }
+
+    #intro {
+      margin-top:180px
+    }
+    #intro h1 {
+      font-size: 30px;
+   }
+   #intro button {
+    margin-top: 80px;
+    width: 100px;
+    max-width: 100%;
+    padding: 10px 0px;
+    
+   }
+   #jrhero {
+    margin-top: 180px;
+   }
+   #jrhero h1 {
+    font-size: 30px;
+   }
+   #jrhero button {
+    padding: 10px 30px;
+   }
+
+  }
+  
+</style>
+
+</head>
+
+    <body >
+      <div class="container-fluid">
+      
+        <div class="entry intro" id="intro">
+          <div class="col text-center">
+            <h1> dare to <span style="color: rgb(0, 0, 0); font-size: 3.5rem;">QUESTION !</span></h1>
+            <h1> dare to <span style="color: rgb(0, 0, 0); font-size: 3.5rem;">SOLVE !</span></h1>
+            <div class="col text-center down-anchor"><button class="letsgo">Let's Go</button></div>
+          </div>
+          </div>
+         
+      </div>
+
+      <div class="special">
+         <div class="main-hero">
+              <nav class="nav">
+                <div class="container-fluid">
+                  
+                      <h1 class="logo"><a href="#">CoCoder.in</a></h1>
+
+                      <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#queries">QUERIES</a></li>
+                        <li><a href="#about-section">ABOUT US</a></li>
+                      </ul>
+                      
+                </div>
+              </nav>
+
+            <div class="container main-container">   
+                  <div  class="main-block">
+                    <h1 style="text-align: center;">Choose your Major</h1>
+                    <div style="position:relative;" class="userIntrest">
+                      <button class="pythonButton"><div><h1 id="h1forPython">Python</h1></div></button>
+                      <button><div><h1>C</h1></div></button>
+                      <button><div><h1>Java</h1></div></button>
+                      <button><div><h1>Ruby</h1></div></button>
+                    </div>
+                    <div id="openSource"></div>
+                  </div>
+            </div>
+
+        </div>
+      </div>
+        
+
+
+<script>
+    
+
+
+</script>
+
+</body>
+</html>
